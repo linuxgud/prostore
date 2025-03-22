@@ -54,9 +54,20 @@ npx prisma migrate dev --name add_user_based_tables
 npm run dev
 ```
 
-### BCRYPT
+#### BCRYPT for seeding
 
 ```bash
 npm i bcrypt-ts-edge
 npx tsx ./db/seed
+```
+
+#### Next-auth
+
+https://next-auth.js.org/providers/credentials
+
+```bash
+npm i next-auth@beta --legacy-peer-deps
+npm i @auth/prisma-adapter
+# NEXTAUTH_SECRET
+openssl rand -base64 32
 ```
