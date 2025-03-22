@@ -12,8 +12,9 @@ const LoadingPage = () => {
         width: '100vw',
       }}
     >
-      <Image src={loader} alt="Loading..." height={150} width={150} />
+      <Image src={loader} height={150} width={150} alt="Loading..." />
     </div>
   )
 }
+
 export default LoadingPage
