@@ -39,3 +39,24 @@ npm i @neondatabase/serverless @prisma/adapter-neon ws
 npm i -D @types/ws bufferutil
 npx prisma generat
 ```
+
+### AUTHENTICATION
+
+#### Config URL
+
+https://authjs.dev/getting-started/adapters/prisma
+
+#### Update DB
+
+```bash
+npx prisma generate
+npx prisma migrate dev --name add_user_based_tables
+npm run dev
+```
+
+### BCRYPT
+
+```bash
+npm i bcrypt-ts-edge
+npx tsx ./db/seed
+```
