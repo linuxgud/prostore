@@ -71,3 +71,9 @@ npm i @auth/prisma-adapter
 # NEXTAUTH_SECRET
 openssl rand -base64 32
 ```
+
+##### form
+
+```bash
+npx shadcn@latest add label input
+```
