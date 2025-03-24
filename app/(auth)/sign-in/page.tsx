@@ -15,7 +15,9 @@ export const metadata: Metadata = {
   title: 'Sign In',
 }
 
-const SignInPage = () => {
+const SignInPage = (props: {
+  searchParams: Promise<{ callbackUrl: string }>
+}) => {
   return (
     <div className="w-full max-w-md mx-auto">
       <Card>
