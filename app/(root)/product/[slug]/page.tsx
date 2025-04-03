@@ -19,7 +19,7 @@ const ProductDetailsPage = async (props: {
   return (
     <>
       <section>
-        <div className="grid gri-cols-1 md:grid-cols-5">
+        <div className="grid grid-cols-1 md:grid-cols-5">
           {/* Images Column */}
           <div className="col-span-2">
             <ProductImages images={product.images} />
@@ -35,7 +35,7 @@ const ProductDetailsPage = async (props: {
               <p>
                 {product.rating} of {product.numReviews} reviews
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                 <ProductPrice
                   value={Number(product.price)}
                   className="w-24 rounded-full bg-green-100 text-green-700 px-5 py-2"
@@ -43,7 +43,7 @@ const ProductDetailsPage = async (props: {
               </div>
             </div>
             <div className="mt-10">
-              <p className="font-semibold">Description:</p>
+              <p className="font-semibold">Description</p>
               <p>{product.description}</p>
             </div>
           </div>
@@ -60,13 +60,13 @@ const ProductDetailsPage = async (props: {
                 <div className="mb-2 flex justify-between">
                   <div>Status</div>
                   {product.stock > 0 ? (
-                    <Badge variant="outline">In stock</Badge>
+                    <Badge variant="outline">In Stock</Badge>
                   ) : (
-                    <Badge variant="destructive">Unavailable</Badge>
+                    <Badge variant="destructive">Out Of Stock</Badge>
                   )}
                 </div>
                 {product.stock > 0 && (
-                  <div className=" flex-center">
+                  <div className="flex-center">
                     <AddToCart
                       cart={cart}
                       item={{
