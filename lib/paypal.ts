@@ -13,12 +13,13 @@ async function generateAccessToken() {
     method: 'POST',
     headers: {
       Authorization: `Basic ${auth}`,
+      //'Content-Type': 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: 'grant_type=client_credentials',
   })
 
-  if (!response.ok) {
+  if (response.ok) {
     const jsonData = await response.json()
     return jsonData.access_token
   } else {
@@ -26,3 +27,5 @@ async function generateAccessToken() {
     throw new Error(errorMessage)
   }
 }
+
+export { generateAccessToken }
