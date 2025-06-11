@@ -247,10 +247,10 @@ export async function getMyOrders({
     orderBy: { createdAt: 'desc' },
     take: limit,
     skip: (page - 1) * limit,
-  })
+  }) // session?.user?.id!
   const dataCount = await prisma.order.count({
     where: { userId: session.user.id },
-  })
+  }) // session?.user?.id!
   return {
     data,
     totalPages: Math.ceil(dataCount / limit),

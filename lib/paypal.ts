@@ -60,6 +60,7 @@ async function generateAccessToken() {
   return jsonData.access_token
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function handleResponse(response: any) {
   if (response.ok) {
     return response.json()
