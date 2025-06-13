@@ -47,9 +47,36 @@ const ProductForm = ({
     defaultValues: product ?? productDefaultValues,
   })
 
+  const onSubmit: SubmitHandler<z.infer<typeof schema>> = async (values) => {
+    if (type === 'Create') {
+      const res = await createProduct(values)
+      toast({
+        variant: res.success ? 'default' : 'destructive',
+        description: res.message,
+      })
+      router.push('/admin/products')
+    }
+    if (type === 'Update') {
+      if (!productId) {
+        router.push('/admin/products')
+        return
+      }
+      const res = await updateProduct({ ...values, id: productId })
+      toast({
+        variant: res.success ? 'default' : 'destructive',
+        description: res.message,
+      })
+      router.push('/admin/products')
+    }
+  }
+
   return (
     <Form {...form}>
-      <form className="space-y-8">
+      <form
+        method="POST"
+        className="space-y-8"
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
         <div className="flex flex-col md:flex-row gap-5">
           {/* Name */}
           <FormField
