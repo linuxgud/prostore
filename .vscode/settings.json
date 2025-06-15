@@ -4,10 +4,12 @@
     "corsor",
     "hookform",
     "lucide",
+    "orderitem",
     "orderitems",
     "Prostore",
     "signin",
     "Updateitems",
-    "orderitem"
+    "Uploadthing",
+    "utfs"
   ]
 }
