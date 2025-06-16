@@ -64,7 +64,7 @@ const AdminOrdersPage = async (props: {
                 </TableCell>
                 <TableCell>
                   <Button variant="outline" size="sm" asChild>
-                    <Link href={`/order/${order.id}`}>Derails</Link>
+                    <Link href={`/order/${order.id}`}>Details</Link>
                   </Button>
                   <DeleteDialog id={order.id} action={deleteOrder} />
                 </TableCell>
