@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { getAllUsers } from '@/lib/actions/user.actions'
+import { getAllUsers, deleteUser } from '@/lib/actions/user.actions'
 import {
   Table,
   TableBody,
@@ -24,7 +24,6 @@ const AdminUserPage = async (props: {
 }) => {
   const { page = 1 } = await props.searchParams
   const users = await getAllUsers({ page: Number(page) })
-  console.log(users)
 
   return (
     <div className="space-y-2">
@@ -58,7 +57,7 @@ const AdminUserPage = async (props: {
                   <Button variant="outline" size="sm" asChild>
                     <Link href={`/admin/users/${user.id}`}>Edit</Link>
                   </Button>
-                  {/*<DeleteDialog id={user.id} action={deleteOrder} />*/}
+                  <DeleteDialog id={user.id} action={deleteUser} />
                 </TableCell>
               </TableRow>
             ))}
