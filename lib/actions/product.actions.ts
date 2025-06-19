@@ -36,8 +36,9 @@ export async function getProductById(productId: string) {
 // Get all products
 export async function getAllProducts({
   limit = PAGE_SIZE,
+  query,
   page,
-}: // query, category,
+}: //  category,
 {
   query: string
   limit?: number
@@ -45,6 +46,7 @@ export async function getAllProducts({
   category?: string
 }) {
   const data = await prisma.product.findMany({
+    where: { name: { contains: query, mode: 'insensitive' } },
     orderBy: { createdAt: 'desc' },
     skip: (page - 1) * limit,
     take: limit,
