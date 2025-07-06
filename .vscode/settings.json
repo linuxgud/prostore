@@ -11,5 +11,8 @@
     "Updateitems",
     "Uploadthing",
     "utfs"
+  ],
+  "cSpell.enableFiletypes": [
+    "prisma"
   ]
 }
