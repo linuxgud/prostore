@@ -97,3 +97,9 @@ The following questions will help Jest to create a suitable configuration for yo
 ✔ Which provider should be used to instrument code for coverage? › v8
 ✔ Automatically clear mock calls, instances, contexts and results before every test? … yes
 ```
+
+#### Stripe
+
+```bash
+npm i stripe @stripe/stripe-js @stripe/react-stripe-js
+```
