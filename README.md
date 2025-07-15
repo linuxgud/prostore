@@ -103,3 +103,9 @@ The following questions will help Jest to create a suitable configuration for yo
 ```bash
 npm i stripe @stripe/stripe-js @stripe/react-stripe-js
 ```
+
+#### Resend
+
+```bash
+npm i resend react-email @react-email/components
+```
